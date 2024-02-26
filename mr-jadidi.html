@@ -1,0 +1,880 @@
+<html dir="rtl" lang="fa-IR" font>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>آقای جدیدی</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      font-size: 16px;
+      font-family: Helvetica;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    *:active {
+      outline: none;
+    }
+
+    #content {
+      display: grid;
+      grid-template-columns: 150px auto;
+      height: 100%;
+    }
+
+    #nav {
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      height: 100%;
+      background-color: #131314;
+
+    }
+
+    #nav a {
+      line-height: 50px;
+      text-decoration: none;
+      color: #d8d8d8;
+      font-variant: small-caps;
+      font-size: 25px;
+      display: block;
+    }
+
+    #nav a:hover {
+      background-color: #446994;
+      color: #fff;
+      font-weight: 10%;
+    }
+
+    main {
+      display: inline-block;
+      margin: 0px;
+      height: 100%;
+    }
+
+    .page {
+      display: none;
+      background-color: #2a2a2b;
+      padding-left: 20px;
+      padding-top: 20px;
+      margin: 0px;
+      height: 100%;
+    }
+
+    .page h1 {
+      margin: 0px;
+    }
+
+    .default {
+      display: block;
+    }
+
+    :target {
+      display: block;
+    }
+
+    :target~.default {
+      display: none;
+    }
+
+    /*****************************************************/
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: linear-gradient(#102244, #335f91);
+    }
+
+    .login-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      padding: 5px;
+      padding-right: 5%;
+      transform: translate(-50%, -50%);
+      background: #435c5b;
+      box-sizing: border-box;
+      box-shadow: 0 35px 35px #112b49f8;
+      border-radius: 10px;
+    }
+
+    .login-box h2 {
+      margin: 0 0 0px;
+      padding: 0;
+      color: #fff;
+      text-align: center;
+    }
+
+    .login-box form a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      padding-right: 10px;
+      color: #03e9f4;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px
+    }
+
+    .login-box a:hover {
+      background: #03e9f4;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+    }
+
+    .login-box a span {
+      position: absolute;
+      display: block;
+    }
+
+    .login-box a span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: btn-anim1 1s linear infinite;
+    }
+
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+    .login-box a span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+
+
+
+    /****************************************/
+    .big {
+      font-size: 1.2em;
+    }
+
+    .square {
+      width: .7em;
+      height: .7em;
+      margin: .5em;
+      display: inline-block;
+    }
+
+    .custom-dropdown {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 10px;
+    }
+
+    .custom-dropdown select {
+      background-color: #1abc9c;
+      color: #fff;
+      font-size: inherit;
+      padding: .5em;
+      padding-right: 2.5em;
+      border: 0;
+      margin: 0;
+      border-radius: 3px;
+      text-indent: 0.01px;
+      text-overflow: '';
+    }
+
+    .custom-dropdown::before,
+    .custom-dropdown::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .custom-dropdown::after {
+      height: 1em;
+      font-size: .625em;
+      line-height: 1;
+      right: 1.2em;
+      top: 50%;
+      margin-top: -.5em;
+    }
+
+    .custom-dropdown::before {
+      width: 2em;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .custom-dropdown::after {
+      color: #00000066;
+    }
+
+    /**********************************************/
+    .rwd-table {
+      margin: 1em 0;
+      min-width: 300px;
+      margin-right: 5%;
+    }
+
+    .rwd-table tr {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .rwd-table th {
+      display: none;
+    }
+
+    .rwd-table td {
+      display: block;
+    }
+
+    .rwd-table td:first-child {
+      padding-top: 0.5em;
+    }
+
+    .rwd-table td:last-child {
+      padding-bottom: 0.5em;
+    }
+
+    .rwd-table td:before {
+      content: attr(data-th) ": ";
+      font-weight: bold;
+      width: 6.5em;
+      display: inline-block;
+    }
+
+    @media (min-width: 480px) {
+      .rwd-table td:before {
+        display: none;
+      }
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+      text-align: left;
+    }
+
+    @media (min-width: 480px) {
+
+      .rwd-table th,
+      .rwd-table td {
+        display: table-cell;
+        padding: 0.25em 0.5em;
+      }
+
+      .rwd-table th:first-child,
+      .rwd-table td:first-child {
+        padding-left: 0;
+      }
+
+      .rwd-table th:last-child,
+      .rwd-table td:last-child {
+        padding-right: 0;
+      }
+    }
+
+
+    h1 {
+      font-weight: normal;
+      letter-spacing: -1px;
+      color: #34495E;
+    }
+
+    .rwd-table {
+      background: #34495E;
+      color: #fff;
+      border-radius: 0.4em;
+      overflow: hidden;
+    }
+
+    .rwd-table tr {
+      border-color: #46637f;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+      margin: 0.5em 1em;
+    }
+
+    @media (min-width: 480px) {
+
+      .rwd-table th,
+      .rwd-table td {
+        padding: 1em !important;
+      }
+    }
+
+    .rwd-table th,
+    .rwd-table td:before {
+      color: #dd5;
+    }
+
+    /********************************************************/
+    .login-box .user-box {
+      position: relative;
+      direction: rtl;
+    }
+
+    .login-box .user-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    .login-box .user-box label {
+      position: absolute;
+      direction: rtl;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 36px;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .login-box .user-box input:focus~label,
+    .login-box .user-box input:valid~label {
+      top: -20px;
+      left: 0;
+      color: #03e9f4;
+      font-size: 36px;
+    }
+
+    /**************************************************************/
+    .cf:before,
+    .cf:after {
+      content: "";
+      display: table;
+    }
+
+    .cf:after {
+      clear: both;
+    }
+
+    .cf {
+      zoom: 1;
+    }
+
+    /* Form wrapper styling */
+    .search-wrapper {
+      width: 220px;
+      margin: 45px auto 50px auto;
+    }
+
+    /* Form text input */
+
+    .search-wrapper input {
+      width: 138px;
+      height: 40px;
+      padding: 10px 5px;
+      float: left;
+      font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+      border: 0;
+      background: #EEE;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .search-wrapper input:focus {
+      outline: 0;
+      background: #fff;
+    }
+
+    .search-wrapper input::-webkit-input-placeholder {
+      color: #999;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    .search-wrapper input:-moz-placeholder {
+      color: #999;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    .search-wrapper input:-ms-input-placeholder {
+      color: #999;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    /* Form submit button */
+    .search-wrapper button {
+      overflow: visible;
+      position: relative;
+      float: right;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      height: 40px;
+      width: 72px;
+      font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+      color: white;
+      text-transform: uppercase;
+      background: #D83C3C;
+      border-radius: 0 3px 3px 0;
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+    }
+
+    .search-wrapper button:hover {
+      background: #e54040;
+    }
+
+    .search-wrapper button:active,
+    .search-wrapper button:focus {
+      background: #c42f2f;
+      outline: 0;
+    }
+
+    .search-wrapper button:before {
+      /* left arrow */
+      content: '';
+      position: absolute;
+      border-width: 8px 8px 8px 0;
+      border-style: solid solid solid none;
+      border-color: transparent #d83c3c transparent;
+      top: 12px;
+      left: -6px;
+    }
+
+    .search-wrapper button:hover:before {
+      border-right-color: #e54040;
+    }
+
+    .search-wrapper button:focus:before,
+    .search-wrapper button:active:before {
+      border-right-color: #c42f2f;
+    }
+
+    .search-wrapper button::-moz-focus-inner {
+      /* remove extra button spacing for Mozilla Firefox */
+      border: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <nav id="nav">
+      <a href="#page1">تنظیمات دستی</a>
+      <a href="#page2">پایش سیگنال</a>
+      <a href="#page3">دریافت</a>
+      <a href="#page4">انتخاب سیگنال</a>
+      <a href="#page5">ارسال سیگنال</a>
+    </nav>
+    <main>
+      <div id="page2" class="page">
+
+        <div class="login-box">
+          <form>
+            <a href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              شروع
+            </a>
+            <span style="color:#eee; font-size:xx-large;">1:</span><span
+              style="color:#eee;font-size:xx-large;">1:</span><span
+              style="color:#eee; margin-right: 25%; font-size:xx-large;">1</span>
+            <a style="margin-right: 22%;" href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              پایان
+            </a>
+            <br>
+            <table class="rwd-table">
+              <tr>
+                <th data-th="tharikh">تاریخ</th>
+                <th data-th="time">زمان</th>
+                <th data-th="modalasion">مدولاسیون</th>
+                <th data-th="frq">فرکانس</th>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">َASK</td>
+                <td data-th="frq">433MHZ</td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <div id="page3" class="page">
+        <div class="login-box">
+          <form>
+            <a href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              شروع
+            </a>
+            <a style="margin-right: 70%;" href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              پایان
+            </a>
+            <br>
+            <table class="rwd-table">
+              <tr>
+                <th data-th="tharikh">تاریخ</th>
+                <th data-th="time">زمان</th>
+                <th data-th="modalasion">مدولاسیون</th>
+                <th data-th="frq">فرکانس</th>
+                <th data-th="olgari">الگوریتم</th>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">َASK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+
+      <div id="page4" class="page" dir="rtl">
+        <div class="login-box">
+          <form>
+            <table class="rwd-table">
+              <tr>
+                <th data-th="tharikh">تاریخ</th>
+                <th data-th="time">زمان</th>
+                <th data-th="modalasion">مدولاسیون</th>
+                <th data-th="frq">فرکانس</th>
+                <th data-th="olgari">الگوریتم</th>
+              </tr>
+              <tr>
+                <td data-th="tharikh">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+            </table>
+            <div class="user-box">
+              <input type="text" name="نام فایل:" required="" id="names">
+              <label>نام فایل:</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="" required="" id="names">
+              <label>مدل ریموت:</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="" required="" id="names">
+              <label>مکان:</label>
+            </div>
+            <div class="user-box">
+              <input type="text" name="" required="" id="names">
+              <label>تاریخ:</label>
+            </div>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">تعداد دفعات ساخت سیگنال:</span>
+              <select>
+                <option>1</option>
+                <option>2 </option>
+                <option>3 </option>
+                <option>4 </option>
+                <option>5 </option>
+                <option>6 </option>
+                <option>7 </option>
+                <option>8 </option>
+                <option>9 </option>
+                <option>10 </option>
+              </select>
+            </span>
+            <a style="margin-right: 5px;" href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              ذخیره در دیتا بیس
+            </a>
+          </form>
+        </div>
+      </div>
+
+      <div id="page5" class="page">
+        <div class="login-box">
+          <br>
+          <br>
+          <form action="/search.html" class="search-wrapper cf">
+            <input type="text" placeholder="Search here..." required="">
+            <button type="submit">Search</button>
+          </form>
+          <form>
+            <table class="rwd-table">
+              <tr>
+                <th data-th="tharikh">تاریخ</th>
+                <th data-th="time">زمان</th>
+                <th data-th="modalasion">مدولاسیون</th>
+                <th data-th="frq">فرکانس</th>
+                <th data-th="olgari">الگوریتم</th>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">َASK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">َASK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">FSK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">َASK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+              <tr>
+                <td data-th="tharikh"><input type="checkbox">1402/10/7</td>
+                <td data-th="time">14:12:12</td>
+                <td ddata-rh="modalasion">َASK</td>
+                <td data-th="frq">433MHZ</td>
+                <td data-th="olgari"> fix</td>
+              </tr>
+            </table>
+            <a href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              ارسال به دستگاه
+            </a>
+          </form>
+        </div>
+      </div>
+
+      <div id="page1" class="page default">
+        <div class="login-box" id="display1">
+          <h2>تنظیمات فرکانس433/315</h2>
+          <form>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">ماژول 1 فرکانس:</span>
+              <select>
+                <option>314</option>
+                <option>315 </option>
+                <option>315.5 </option>
+                <option>316.5 </option>
+              </select>
+            </span>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">مدولاسیون:</span><select>
+                <option>ASK</option>
+                <option>FSK </option>
+              </select>
+            </span>
+            </br>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">&nbsp;ماژول 2 فرکانس:</span>
+              <select>
+                <option>433</option>
+                <option>433.5 </option>
+                <option>434 </option>
+              </select>
+            </span>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">مدولاسیون:</span><select>
+                <option>ASK</option>
+                <option>FSK </option>
+              </select>
+            </span>
+            <br>
+            <a href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              ذخیره
+            </a>
+          </form>
+          <h2>تنظیمات فرکانس868/915</h2>
+          <form>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">ماژول 1 فرکانس:</span>
+              <select>
+                <option>868</option>
+                <option>868.5 </option>
+                <option>869 </option>
+              </select>
+            </span>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">مدولاسیون:</span><select>
+                <option>ASK</option>
+                <option>FSK </option>
+              </select>
+            </span>
+            </br>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">&nbsp;ماژول 2 فرکانس:</span>
+              <select>
+                <option>915</option>
+                <option>915.5 </option>
+                <option>916 </option>
+              </select>
+            </span>
+            <span class="custom-dropdown big">
+              <span style="color: #d8d8d8;">مدولاسیون:</span><select>
+                <option>ASK</option>
+                <option>FSK </option>
+              </select>
+            </span>
+            <br>
+            <a href="#" onclick="">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              ذخیره
+            </a>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+<script>
+  /*let width = screen.width;
+  console.log("read_is_width"+width);
+  let height=screen.height;
+  console.log("read_is_height"+height);
+  let display1_Width=width-150;
+  display1_Width=display1_Width/2;
+  document.getElementById("display1").style.width=display1_Width;
+  document.getElementById("display1").style.marginRight=display1_Width;*/
+</script>
+
+</html>
